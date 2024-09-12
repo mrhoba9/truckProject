@@ -7,6 +7,9 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+const cors = require('cors');
+app.use(cors());
+
 const dataFilePath = path.join(__dirname, "data", "contact-responce.json");
 if (!fs.existsSync(path.dirname(dataFilePath))) {
 	fs.mkdirSync(path.dirname(dataFilePath));
