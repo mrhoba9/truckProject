@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	document.getElementById("footer-footer").innerHTML += `
 		<a href="https://www.auro-eg.com" class="flex items-center justify-center text-white text-center">
-			<img src="./images/logo-white.png" class="h-10 w-16 mr-2" alt="">&copy; auro-eg.com
+			<img src="logo-white.png" class="h-10 w-16 mr-2" alt="">&copy; auro-eg.com
 		</a>
 	`;
 });
