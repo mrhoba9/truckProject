@@ -2490,7 +2490,7 @@ body {
 
 .fisrt-section {
   background-image: linear-gradient(to right, #0000003d, #00000088),
-		url("./images/secTruckBg.webp") !important;
+		url("secTruckBg.webp") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
