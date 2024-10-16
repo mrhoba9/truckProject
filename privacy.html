@@ -7,144 +7,154 @@
 	</head>
 	<body>
 		<style>
+			:root {
+				--primary-bg: #1f2937;
+				--header-bg: linear-gradient(to bottom, #1e3a8a 20%, #1f2937);
+				--contact-bg: rgba(255, 255, 255, 0.1);
+				--input-bg: rgba(255, 255, 255, 0.2);
+				--input-focus-bg: rgba(255, 255, 255, 0.3);
+				--button-bg: #2563eb;
+				--button-hover-bg: #1d4ed8;
+				--link-color: #4ec5fc;
+				--link-hover-color: #93ddff;
+				--text-color: white;
+				--border-color: rgba(255, 255, 255, 0.2);
+			}
+
 			* {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 				margin: 0;
 				padding: 0;
-				box-sizing: border-box;
 			}
-		
+
 			body {
 				font-family: Arial, sans-serif;
 				line-height: 1.6;
-				color: #333;
-				background: linear-gradient(to right, #ff7e5f, #feb47b); /* Background gradient */
-				padding: 0;
-				margin: 0;
+				background-color: var(--primary-bg);
+				color: var(--text-color);
+				padding: 20px;
 			}
-		
-			.header {
-                background: linear-gradient(to right, #6a11cb, #ab47bc); /* Adjusted purple gradient */
-                color: white;
-                padding: 1rem 1rem;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            }
-        
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-        
-            .brand {
-                font-size: 2.5rem;
-                font-weight: 700;
-                text-decoration: none;
-                color: white;
-            }
-        
-            .nav-links {
-                display: flex;
-            }
-        
-            .nav-links a {
-                text-decoration: none;
-                color: white;
-                margin-left: 2rem;
-                font-size: 1.2rem;
-                font-weight: 500;
-                transition: all 0.3s ease;
-            }
-        
-            .nav-links a:hover {
-                color: #ffd700; /* Gold */
-                border-radius: 5px;
-                opacity: 0.9;
-            }
-        
-            .nav-links a:active {
-                color: #fff;
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-		
-			.main-content {
-				padding: 2rem;
-				margin: 1.3rem;
-				background: white;
-				border-radius: 10px;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-			}
-		
-			h1 {
-				font-size: 2rem;
-				color: #333;
-				margin-bottom: 1rem;
-			}
-		
-			h2 {
-				font-size: 1.5rem;
-				color: #333;
-				margin: 1.5rem 0 0.5rem;
-			}
-		
-			p {
-				margin-bottom: 1rem;
-			}
-		
-			ul {
-				list-style-type: disc;
-				margin-left: 2rem;
-			}
-		
-			ul li {
-				margin-bottom: 0.5rem;
-			}
-		
-			footer {
-				background: linear-gradient(to right, #6a11cb, #2575fc); /* Footer gradient */
-				color: #fff;
-				text-align: center;
-				padding: 1rem;
-				width: 100%;
-				box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-			}
-		
-			footer p {
-				margin: 0;
-			}
-			@media (max-width: 992px) {
-                .brand {
-                    font-size: 1.8rem;
-                }
-        
-                .nav-links a {
-                    margin-left: 1rem;
-                    font-size: 1rem;
-                }
-            }
 
+			.header {
+				background: var(--header-bg);
+				color: var(--text-color);
+				padding: 20px;
+				text-align: center;
+				border-bottom: 3px solid var(--button-bg);
+				-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+			}
+			.navbar {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+			}
+			@media (max-width: 768px) {
+				.navbar {
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+					flex-direction: column;
+				}
+			}
+			.brand {
+				font-size: 24px;
+				color: white;
+				text-decoration: none;
+			}
+
+			.nav-links {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				gap: 20px;
+			}
+			.nav-links a {
+				color: white;
+				text-decoration: none;
+				padding: 10px;
+				-webkit-transition: background-color 0.3s ease;
+				-o-transition: background-color 0.3s ease;
+				transition: background-color 0.3s ease;
+			}
+			.nav-links a:hover {
+				background-color: rgba(255, 255, 255, 0.3);
+				border-radius: 5px;
+				-webkit-transform: scale(1.05);
+				-ms-transform: scale(1.05);
+				transform: scale(1.05);
+				-webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			}
+
+			.main-content {
+				max-width: 800px;
+				margin: 20px auto;
+				padding: 20px;
+				background-color: var(--contact-bg);
+				border-radius: 8px;
+				-webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+			}
+
+			.privacy-policy h1,
+			.privacy-policy h2 {
+				color: var(--link-color);
+				margin-bottom: 10px;
+			}
+
+			.effective-date {
+				font-style: italic;
+				margin-bottom: 20px;
+			}
+
+			.privacy-policy p {
+				margin-bottom: 15px;
+			}
+
+			.privacy-policy ul {
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			.footer {
+				text-align: center;
+				padding: 10px 0;
+				background-color: var(--header-bg);
+				color: var(--text-color);
+				position: relative;
+				bottom: 0;
+				width: 100%;
+				border-top: 2px solid var(--button-bg);
+			}
+
+			.footer p {
+				margin: 0;
+			}
 
 			@media (max-width: 768px) {
-                .navbar {
-                    flex-direction: column;
-                }
-        
-                .nav-links {
-                    margin-top: 1rem;
-                }
-            }
-        
-            @media (max-width: 576px) {
-                .brand {
-                    font-size: 1.5rem;
-                }
-            }
+				.header {
+					padding: 15px;
+				}
+
+				.main-content {
+					padding: 15px;
+				}
+			}
 		</style>
-		
+
 		<header class="header">
 			<nav class="navbar">
-				<a href="index.html" class="brand">Privacy Policy</a>
+				<a href="sweden.html" class="brand">Privacy Policy</a>
 				<div class="nav-links">
-					<a href="truck.html">Home</a>
+					<a href="sweden.html">Home</a>
 					<a href="FAQ.html">FAQ</a>
 					<a href="contact.html">Contact us</a>
 				</div>
@@ -158,11 +168,11 @@
 
 				<h2>1. Introduction</h2>
 				<p>
-					Welcome to Truck store. This Privacy Policy explains how we collect,
-					use, disclose, and safeguard your information when you visit our
-					website auro-eg.com. Please read this policy carefully. If you do not
-					agree with the terms of this privacy policy, please do not access the
-					site.
+					Welcome to Sweden Trading. This Privacy Policy explains how we
+					collect, use, disclose, and safeguard your information when you visit
+					our website auro-eg.com. Please read this policy carefully. If you do
+					not agree with the terms of this privacy policy, please do not access
+					the site.
 				</p>
 
 				<h2>2. Information We Collect</h2>
@@ -284,14 +294,17 @@
 					If you have any questions about this Privacy Policy, please contact us
 					at:
 				</p>
-				<p>Email: Nehab2580@gmail.com</p>
-				<p>Phone: +201060180785</p>
-				<p>Address: [Your Address]</p>
+				<p>Email: info@seden-eg.com</p>
+				<p>Phone: +201127399910</p>
+				<p>
+					Address: كورنيش النيل ابراج عثمان 1365 ش دولتيان-اغاخان - شبرا مصر,
+					Cairo, Egypt
+				</p>
 			</section>
 		</main>
 
 		<footer class="footer">
-			<p>&copy; 2024 Truck Store. All rights reserved.</p>
+			<p>&copy; 2024 Sweden Trading. All rights reserved.</p>
 		</footer>
 	</body>
 </html>

@@ -3,93 +3,133 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Truck Parts Store - FAQ</title>
+		<title>Sweden Trading - FAQ</title>
 	</head>
 	<body>
 		<style>
+			:root {
+				--primary-bg: #1f2937;
+				--header-bg: linear-gradient(to bottom, #1e3a8a 20%, #1f2937);
+				--contact-bg: rgba(255, 255, 255, 0.1);
+				--input-bg: rgba(255, 255, 255, 0.2);
+				--input-focus-bg: rgba(255, 255, 255, 0.3);
+				--button-bg: #2563eb;
+				--button-hover-bg: #1d4ed8;
+				--link-color: #4ec5fc;
+				--link-hover-color: #93ddff;
+				--text-color: white;
+				--border-color: rgba(255, 255, 255, 0.2);
+			}
+
 			* {
+				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
 				margin: 0;
 				padding: 0;
 			}
-		
+
 			body {
-				font-family: "Arial", sans-serif;
-				background: linear-gradient(to right, #ff7e5f, #feb47b);
-				color: #333;
+				font-family: "Helvetica Neue", Arial, sans-serif;
 				line-height: 1.6;
+				background-color: var(--primary-bg);
+				color: var(--text-color);
 			}
-		
+
 			.header {
-				background: linear-gradient(to right, #6a11cb, #ab47bc); /* Purple gradient */
-				color: white;
+				background: var(--header-bg);
+				color: var(--text-color);
 				padding: 20px;
 				text-align: center;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+				border-bottom: 3px solid var(--button-bg);
+				-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 			}
-		
-			h1 {
-				font-size: 2.5rem;
-				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+			@media (max-width: 768px) {
+				.header {
+					font-size: 1rem;
+				}
 			}
-		
+
+			@media (max-width: 495px) {
+				.header {
+					font-size: 0.7rem;
+				}
+			}
+
 			.faq-section {
-				padding: 20px;
-				max-width: 900px;
+				max-width: 800px;
 				margin: 20px auto;
-				background-color: white;
+				padding: 20px;
+				background-color: rgba(255, 255, 255, 0.15);
 				border-radius: 8px;
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+				-webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 			}
-		
+
 			.faq-item {
 				margin-bottom: 20px;
-			}
-		
-			.faq-question {
-				font-size: 1.5rem;
-				font-weight: bold;
-				margin-bottom: 10px;
-				color: #6a11cb; /* Darker purple */
-			}
-		
-			.faq-answer {
-				font-size: 1.1rem;
-				margin-bottom: 15px;
-				color: #555;
-				line-height: 1.7;
-			}
-		
-			.footer {
-				background: linear-gradient(to right, #6a11cb, #ab47bc); /* Purple gradient */
-				color: white;
 				padding: 15px;
+				border: 1px solid var(--border-color);
+				border-radius: 5px;
+				background-color: rgba(255, 255, 255, 0.15);
+				-webkit-transition: background-color 0.3s ease,
+					-webkit-transform 0.2s ease;
+				transition: background-color 0.3s ease, -webkit-transform 0.2s ease;
+				-o-transition: background-color 0.3s ease, transform 0.2s ease;
+				transition: background-color 0.3s ease, transform 0.2s ease;
+				transition: background-color 0.3s ease, transform 0.2s ease,
+					-webkit-transform 0.2s ease;
+			}
+
+			.faq-item:hover {
+				background-color: rgba(255, 255, 255, 0.2);
+				-webkit-transform: translateY(-2px);
+				-ms-transform: translateY(-2px);
+				transform: translateY(-2px);
+			}
+
+			.faq-question {
+				margin: 0;
+				color: #7ad3da;
+				font-weight: bold;
+				cursor: pointer;
+				-webkit-transition: color 0.3s ease;
+				-o-transition: color 0.3s ease;
+				transition: color 0.3s ease;
+			}
+
+			.faq-question:hover {
+				color: var(--link-hover-color);
+				text-decoration: underline;
+			}
+
+			.faq-answer {
+				margin-top: 10px;
+				color: var(--text-color);
+				-webkit-transition: opacity 0.3s ease;
+				-o-transition: opacity 0.3s ease;
+				transition: opacity 0.3s ease;
+			}
+
+			.footer {
 				text-align: center;
+				padding: 10px 0;
+				background-color: var(--header-bg);
+				color: var(--text-color);
 				position: relative;
 				bottom: 0;
 				width: 100%;
-				box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+				border-top: 3px solid var(--button-bg);
+				-webkit-box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 			}
-		
-			@media (max-width: 768px) {
-				.faq-question {
-					font-size: 1.3rem;
-				}
-		
-				.faq-answer {
-					font-size: 1rem;
-				}
-		
-				h1 {
-					font-size: 2rem;
-				}
+
+			.footer p {
+				margin: 0;
 			}
 		</style>
-		
-
-
 		<header class="header">
-			<h1>Truck Store - Frequently Asked Questions (FAQ)</h1>
+			<h1>Sweden Trading - Frequently Asked Questions (FAQ)</h1>
 		</header>
 		<main class="faq-section">
 			<div class="faq-item">
@@ -158,24 +198,13 @@
 				<h2 class="faq-question">How do I contact customer support?</h2>
 				<p class="faq-answer">
 					You can reach our customer support team via email at
-					Nehab2580@gmail.com or by phone at +201060180785. Our team is
-					available Saturday to Thursday, 9 AM to 10 PM (EST).
+					info@sweden-eg.com or by phone at +201127399910. Our team is available
+					Saturday to Thursday, 9 AM to 10 PM.
 				</p>
 			</div>
 		</main>
 		<footer class="footer">
-			<p>&copy; 2024 Truck Store. All rights reserved.</p>
+			<p>&copy; 2024 Sweden Trading. All rights reserved.</p>
 		</footer>
-		<script>
-			const faqItems = document.querySelectorAll(".faq-question");
-
-			faqItems.forEach((item) => {
-				item.addEventListener("click", () => {
-					const answer = item.nextElementSibling;
-					answer.style.display =
-						answer.style.display === "block" ? "none" : "block";
-				});
-			});
-		</script>
 	</body>
 </html>
