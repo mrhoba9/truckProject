@@ -2698,7 +2698,7 @@ body {
 
 .fisrt-section {
   background-image: linear-gradient(to right, #0000003d, #00000088),
-		url("./images/mainBackgroundImage.jpg") !important;
+		url("mainBackgroundImage.jpg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
